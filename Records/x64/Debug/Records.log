@@ -1,0 +1,19 @@
+﻿  AbsDirectoryComponent.cpp
+  AbsDocument.cpp
+  AbsInstanceComponent.cpp
+  AddAnnotationVisitor.cpp
+  AnnotationDecorator.cpp
+  CountArtifactsVisitor.cpp
+  Directory.cpp
+  FindDocumentVisitor.cpp
+C:\Users\pablo\Desktop\Ecole\LOG1410\TP6\TP6 Log1410\Records\FindDocumentVisitor.h(28,37): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  GenericDocument.cpp
+  Artifact.cpp
+  Minutes.cpp
+  Organization.cpp
+  Records.cpp
+  Agenda.cpp
+  Instance.cpp
+  Generating Code...
+C:\Users\pablo\Desktop\Ecole\LOG1410\TP6\TP6 Log1410\Records\AnnotationDecorator.cpp(26): error C4716: 'AnnotationDecorator::clone': must return a value
+C:\Users\pablo\Desktop\Ecole\LOG1410\TP6\TP6 Log1410\Records\AnnotationDecorator.cpp(31): error C4716: 'AnnotationDecorator::accept': must return a value
