@@ -2,6 +2,7 @@
 
 #include "Directory.h"
 #include "AbsDocument.h"
+#include "AddAnnotationVisitor.h"
 
 int Directory::m_indent = 0;
 
@@ -32,6 +33,11 @@ AbsDirectoryComponent& Directory::addDirectoryComponent(const AbsDirectoryCompon
 	// qui vient d'être inséré dans le conteneur.
 	m_documents.push_back(DirectoryComponentPtr(member.clone()));
 	return *m_documents.back(); // À remplacer 
+}
+
+AbsDirectoryComponent& Directory::accept(AddAnnotationVisitor& v) const
+{
+	return v.processDirectory(*this);
 }
 
 DirectoryComponentIterator Directory::begin()

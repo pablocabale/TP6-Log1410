@@ -33,3 +33,7 @@ std::ostream& Artifact::printToStream(std::ostream& o) const
 	return o;
 }
 
+void Artifact::accept(class AbsInstanceVisitor& v)
+{
+	
+};
