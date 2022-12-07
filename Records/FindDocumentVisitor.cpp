@@ -19,7 +19,6 @@ void FindDocumentVisitor::processArtifact(Artifact& artifact)
 	//              si oui, ajouter l'itérateur sur ce document dans la liste des artéfacts trouvés
 	if (m_searchedName == artifact.getDocument().getName())
 	{
-		m_currentIterator = InstanceComponentBaseIterator(InstanceComponentPtr(&artifact));
 		m_artifactsFound.push_back(*m_currentIterator);
 	}
 }
@@ -29,6 +28,10 @@ void FindDocumentVisitor::processInstance(Instance& instance)
 	// À compléter: itérer sur tous les éléments de l'instance
 	//                   - conserver un pointeur sur l'itérateur de élément
 	//                   - appliquer le visiteur sur l'élément
+	for (auto it = instance.begin(); it != instance.end(); ++it) {
+		m_currentIterator = &it;
+		(*it).accept(*this);
+	}
 }
 
 FoundArtifactIterator FindDocumentVisitor::begin()

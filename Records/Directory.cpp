@@ -77,6 +77,10 @@ const AbsDocument* Directory::findDocument(std::string productName) const
 	const AbsDocument* foundDocument = nullptr;
 	
 	// À compléter
+	for (auto it = cbegin(); it != cend(); ++it) {
+		if (foundDocument == nullptr)
+			foundDocument = (*it).findDocument(productName);
+	}
 	
 	return foundDocument;
 }
