@@ -6,7 +6,7 @@
 ///////////////////////////////////////////////////////////
 
 #include "Instance.h"
-#include "AddAnnotationVisitor.h"
+#include "AbsInstanceVisitor.h"
 
 Instance::Instance(std::string name)
     : AbsInstanceComponent(name)
@@ -87,5 +87,5 @@ std::ostream& Instance::printToStream(std::ostream& o) const
 
 void Instance::accept(class AbsInstanceVisitor& v)
 {
-
+	v.processInstance(*this);
 };

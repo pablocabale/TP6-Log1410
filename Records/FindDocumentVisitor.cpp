@@ -17,6 +17,11 @@ void FindDocumentVisitor::processArtifact(Artifact& artifact)
 {
 	// À compléter: vérifier si le nom du document correspond au nom cherché
 	//              si oui, ajouter l'itérateur sur ce document dans la liste des artéfacts trouvés
+	if (m_searchedName == artifact.getDocument().getName())
+	{
+		m_currentIterator = InstanceComponentBaseIterator(InstanceComponentPtr(&artifact));
+		m_artifactsFound.push_back(*m_currentIterator);
+	}
 }
 
 void FindDocumentVisitor::processInstance(Instance& instance)
